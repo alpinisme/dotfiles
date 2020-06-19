@@ -136,16 +136,12 @@ export TREE_COLORS="di=1;34:"
 
 # Directory Aliases
 alias desk="~/Desktop"
-alias fp="~/Desktop/Functional-Programming"
-alias play="~/Sites/Laravel-Playground"
 alias dev="~/Desktop/Dev"
 alias reactdev="~/Desktop/Dev/react"
 alias vuedev="~/Desktop/Dev/vue"
 alias elmdev="~/Desktop/Dev/elm"
 alias jsdev="~/Desktop/Dev/js"
-alias schemedev="~/Desktop/Dev/scheme"
-alias icic="/Applications/AMPPS/www"
-alias filmapping="/Applications/MAMP/htdocs/filmapping"
+alias dotfiles="~/.dotfiles"
 alias exer="/Users/matthewnelson/Exercism"
 
 # Application-Specific Aliases
