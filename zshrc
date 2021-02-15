@@ -153,6 +153,9 @@ alias sqlstop="/Applications/MAMP/bin/stopMysql.sh"
 alias serverstart="/Applications/MAMP/bin/start.sh"
 alias serverstop="/Applications/MAMP/bin/stop.sh"
 alias mysql="/Applications/MAMP/Library/bin/mysql -u root -p"
+alias jest="npx jest"
+alias dev="npm run dev"
+alias prod="npm run prod"
 
 # General Command Line Aliases
 alias zshrc="vim /Users/matthewnelson/.zshrc"
@@ -171,3 +174,8 @@ alias del="trash"
 # iterm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 ZSH_DISABLE_COMPFIX=true
+[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+if [ -e /Users/matthewnelson/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/matthewnelson/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# hook direnv to shell, used by ihp (haskell web framework)
+eval "$(direnv hook zsh)"

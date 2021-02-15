@@ -301,13 +301,13 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSColorPanel</key>
-	<string>0 160 224 275 0 0 1792 1097 </string>
+	<string>0 162 224 275 0 0 1792 1097 </string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>496 506 799 448 0 0 1792 1097 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>586 548 620 392 0 0 1792 1097 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 100 1322 977 0 0 1792 1097 </string>
+	<string>0 82 1410 1000 0 0 1792 1097 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>247 91 970 977 0 0 1792 1097 </string>
 	<key>New Bookmarks</key>
@@ -1608,7 +1608,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>FE2DFA06-EB5B-47E1-BB33-1001F6EA30F8</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>14</integer>
+	<integer>16</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2386,13 +2386,13 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-06-09T16:46:41Z</date>
+	<date>2020-07-02T16:47:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>2626483806</integer>
+	<integer>1577986349</integer>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -2405,6 +2405,8 @@
 	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>iTerm Version</key>
 	<string>3.3.11</string>
 </dict>
