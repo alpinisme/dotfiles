@@ -92,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR='code'
+export EDITOR='vim'
 
 export TERM=xterm-256color
 
@@ -146,8 +146,8 @@ alias exer="/Users/matthewnelson/Exercism"
 
 # Application-Specific Aliases
 alias pu="./vendor/bin/phpunit"
-alias puf="phpunit --filter"
-alias pug="phpunit --group"
+alias puf="./vendor/bin/phpunit --filter"
+alias pug="./vendor/bin/phpunit --group"
 alias sqlstart="/Applications/MAMP/bin/startMysql.sh"
 alias sqlstop="/Applications/MAMP/bin/stopMysql.sh"
 alias serverstart="/Applications/MAMP/bin/start.sh"
