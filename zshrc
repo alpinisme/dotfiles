@@ -156,6 +156,8 @@ alias mysql="/Applications/MAMP/Library/bin/mysql -u root -p"
 alias jest="npx jest"
 alias dev="npm run dev"
 alias prod="npm run prod"
+alias pat="php artisan test"
+alias patp="php artisan test --parallel"
 
 # General Command Line Aliases
 alias zshrc="vim /Users/matthewnelson/.zshrc"
