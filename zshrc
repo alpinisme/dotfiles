@@ -38,7 +38,11 @@ HYPHEN_INSENSITIVE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
+# don't correct command line arguments
+setopt nocorrectall
+# do correct commands
+setopt correct
 
 # display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -103,6 +107,7 @@ bindkey -M viins 'jk' vi-cmd-mode
 bindkey "^?" backward-delete-char
 
 # tags to display when in particular mode
+#
 vim_ins_mode="%{$fg[cyan]%}[INSERT]%{$reset_color%}"
 vim_cmd_mode="%{$fg[magenta]%}[NORMAL]%{$reset_color%}"
 #begin script to toggle these tags depending on mode
