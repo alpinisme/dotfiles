@@ -3,3 +3,5 @@
 	email = menelso2@illinois.edu
 [core]
 	excludesFile = /Users/matthewnelson/.dotfiles/gitignore_global
+[init]
+	defaultBranch = main
