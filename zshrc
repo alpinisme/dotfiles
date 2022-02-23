@@ -1,10 +1,8 @@
-# If you come from bash you might have to change your $PATH.
 export PATH=$HOME/.composer/vendor/bin:$PATH
-
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/matthewnelson/.oh-my-zsh"
+export PATH=~/.npm-global/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export HOSTNAME=localhost
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -68,7 +66,7 @@ HIST_STAMPS="%d %b  %I:%M %p"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(laravel npm)
+plugins=(npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -141,23 +139,12 @@ export TREE_COLORS="di=1;34:"
 
 # Directory Aliases
 alias desk="~/Desktop"
-alias dev="~/Desktop/Dev"
-alias reactdev="~/Desktop/Dev/react"
-alias vuedev="~/Desktop/Dev/vue"
-alias elmdev="~/Desktop/Dev/elm"
-alias jsdev="~/Desktop/Dev/js"
 alias dotfiles="~/.dotfiles"
-alias exer="/Users/matthewnelson/Exercism"
 
 # Application-Specific Aliases
 alias pu="./vendor/bin/phpunit"
 alias puf="./vendor/bin/phpunit --filter"
 alias pug="./vendor/bin/phpunit --group"
-alias sqlstart="/Applications/MAMP/bin/startMysql.sh"
-alias sqlstop="/Applications/MAMP/bin/stopMysql.sh"
-alias serverstart="/Applications/MAMP/bin/start.sh"
-alias serverstop="/Applications/MAMP/bin/stop.sh"
-alias mysql="/Applications/MAMP/Library/bin/mysql -u root -p"
 alias jest="npx jest --maxWorkers=50%"
 alias dev="npm run dev"
 alias prod="npm run prod"
@@ -165,7 +152,7 @@ alias pat="php artisan test"
 alias patp="php artisan test --parallel"
 
 # General Command Line Aliases
-alias zshrc="vim /Users/matthewnelson/.zshrc"
+alias zshrc="vim $HOME/.zshrc"
 alias tree="tree -I 'node_modules|vendor|storage|cache|haskell-ide-engine'"
 alias t1="tree -tL 1"
 alias t1a="tree -atL 1"
@@ -174,6 +161,9 @@ alias t2a="tree -atL 2"
 alias t3="tree -tL 3 -I 'node_modules|vendor|storage|cache|haskell-ide-engine'"
 alias lsl="ls -al"
 alias l="ls -AFGu"
+
+alias gl="git log --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'"
+alias glf="git log --follow -p"
 
 alias rm="trash"
 alias del="trash"
@@ -185,4 +175,6 @@ ZSH_DISABLE_COMPFIX=true
 if [ -e /Users/matthewnelson/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/matthewnelson/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # hook direnv to shell, used by ihp (haskell web framework)
-eval "$(direnv hook zsh)"
+# eval "$(direnv hook zsh)"
+
+. ~/.zsh_local_aliases
