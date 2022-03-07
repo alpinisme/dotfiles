@@ -11,7 +11,6 @@ Plug 'KKPMW/distilled-vim'
 Plug 'tjammer/blayu.vim'
 Plug 'dracula/vim', { 'as': 'dracula' } 
 Plug 'arcticicestudio/nord-vim'
-Plug 't1mxg0d/vim-lucario'
 Plug 'marcopaganini/termschool-vim-theme'
 Plug 'NLKNguyen/papercolor-theme' "set background=light
 Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
