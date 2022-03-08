@@ -5,7 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-"
+
 " color themes 
 Plug 'KKPMW/distilled-vim'
 Plug 'tjammer/blayu.vim'
@@ -35,13 +35,13 @@ call plug#end()
 syntax on           "turn on syntax highlighting
 
 let g:lightline = {
-      \ 'colorscheme': 'dracula',
+      \ 'colorscheme': 'ayu_mirage',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#Head'
+      \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
 
@@ -70,7 +70,7 @@ set lazyredraw      "Don’t update screen during macro and script execution.
 set linebreak       "don't wrap words midway through
 " keybindings
 map <C-n> :NERDTreeToggle<CR>
-inoremap jk <ESC> 
+inoremap <C-@> <ESC> 
 nnoremap zz :update<CR>
 inoremap zz <Esc>:update<CR>gi
 vnoremap y "*y
@@ -83,7 +83,7 @@ nmap <silent> <leader>t :TestFile<CR>
 
 " recommended CoC config
 set hidden
-inoremap <silent><expr> <c-space> coc#refresh()
+"inoremap <silent><expr> <c-space> coc#refresh()
 set updatetime=300  
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " Keybindings
