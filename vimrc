@@ -13,17 +13,21 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'marcopaganini/termschool-vim-theme'
 Plug 'NLKNguyen/papercolor-theme' "set background=light
-Plug 'https://gitlab.com/protesilaos/tempus-themes-vim.git'
+Plug 'cocopon/iceberg.vim'
+Plug 'rhysd/vim-color-spring-night'
+Plug 'AhmedAbdulrahman/aylin.vim'
+Plug 'phanviet/vim-monokai-pro'
 
 Plug 'itchyny/lightline.vim'    "status bar at bottom
 Plug 'andys8/vim-elm-syntax'    "elm syntax highlight
 Plug 'janko/vim-test'           "testing
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "for language-server-protocol
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-commentary'     "toggle comments 
+Plug 'tpope/vim-surround'       "surround with stuff like quotes, braces, and tags
+Plug 'mattn/emmet-vim'          "emmet integration `<C-y>,`
+Plug 'tpope/vim-fugitive'       "git integration (command `:Git <command>`
+Plug 'scrooloose/nerdtree'      "navigate directories and files
+Plug 'airblade/vim-gitgutter'   "shows git diff next to line numbers: add, remove, change
 
 Plug 'rust-lang/rust.vim'
 call plug#end()
