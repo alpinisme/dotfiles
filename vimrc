@@ -12,12 +12,13 @@ Plug 'tjammer/blayu.vim'
 Plug 'dracula/vim', { 'as': 'dracula' } 
 Plug 'arcticicestudio/nord-vim'
 Plug 'marcopaganini/termschool-vim-theme'
-Plug 'NLKNguyen/papercolor-theme' "set background=light
 Plug 'cocopon/iceberg.vim'
 Plug 'rhysd/vim-color-spring-night'
 Plug 'AhmedAbdulrahman/aylin.vim'
 Plug 'phanviet/vim-monokai-pro'
+Plug 'fenetikm/falcon'
 
+Plug 'junegunn/fzf'
 Plug 'itchyny/lightline.vim'    "status bar at bottom
 Plug 'andys8/vim-elm-syntax'    "elm syntax highlight
 Plug 'janko/vim-test'           "testing
@@ -75,7 +76,7 @@ nnoremap zz :update<CR>
 inoremap zz <Esc>:update<CR>gi
 vnoremap y "*y
 nnoremap <C-p> "*p
-
+tnoremap <Esc> <C-\><C-n>       "return to normal mode from terminal mode using escape key
 " Map <leader> to `,`
 let mapleader=','
 
