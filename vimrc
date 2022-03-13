@@ -70,6 +70,8 @@ set smartcase       " ...unless we type a capital
 set lazyredraw      "Don’t update screen during macro and script execution.
 set linebreak       "don't wrap words midway through
 set foldmethod=syntax "fold (`z-a`) according to code syntax
+set nofoldenable    "disable automatic folding on file opening
+set foldlevel=99
 " keybindings
 map <C-n> :NERDTreeToggle<CR>
 inoremap <C-@> <ESC> 
