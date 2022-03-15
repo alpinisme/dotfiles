@@ -17,8 +17,9 @@ Plug 'rhysd/vim-color-spring-night'
 Plug 'AhmedAbdulrahman/aylin.vim'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'fenetikm/falcon'
-
-Plug 'junegunn/fzf'
+ 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "Fuzzy search
+Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'    "status bar at bottom
 Plug 'andys8/vim-elm-syntax'    "elm syntax highlight
 Plug 'janko/vim-test'           "testing
@@ -100,7 +101,10 @@ nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>g :call CocAction('doHover')<CR>
 nmap <silent> <leader>u <Plug>(coc-references)
 nmap <silent> <leader>p :call CocActionAsync('format')<CR>
-nmap <silent> <leader>f :call CocActionAsync('format')<CR>
+nmap <silent> <leader>f :GFiles<CR>
+nmap <silent> <leader>F :Files<CR>
+nmap <silent> <leader>b :Buffers<CR>
+nmap <silent> <leader>h :History<CR>
 " Highlight symbol under cursor on CursorHold
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
