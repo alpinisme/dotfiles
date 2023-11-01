@@ -85,7 +85,6 @@ export TERM=xterm-256color
 # vi mode stuff
 
 bindkey -v
-bindkey -M viins 'jk' vi-cmd-mode
 bindkey "^?" backward-delete-char
 
 # tags to display when in particular mode
@@ -148,11 +147,14 @@ alias l="ls -AFGu"
 
 alias gl="git log --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'"
 alias glf="git log --follow -p"
+alias gpruned="git branch -vv | grep ': gone]' | cut -w -f 2"
+alias grmpruned="gpruned | xargs git branch --delete"
 
 alias rm="trash"
 alias del="trash"
 
 alias ports="lsof -nP -iTCP -sTCP:LISTEN"
+alias colors="for COLOR in {1..255}; do echo -en \"\e[38;5;\${COLOR}m\${COLOR} \"; done; echo;"
 
 # iterm2 shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
