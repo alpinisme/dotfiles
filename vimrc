@@ -17,7 +17,7 @@ Plug 'rhysd/vim-color-spring-night'
 Plug 'AhmedAbdulrahman/aylin.vim'
 Plug 'phanviet/vim-monokai-pro'
 Plug 'fenetikm/falcon'
- 
+
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "Fuzzy search
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'    "status bar at bottom
@@ -48,7 +48,7 @@ let g:lightline = {
       \ }
 
 set termguicolors   "allow true color (not 16/256 color) themes to display properly
-colorscheme blayu
+colorscheme aylin
 
 set number          "show line numbers
 set laststatus=2    "show status bar at bottom
@@ -73,6 +73,7 @@ set linebreak       "don't wrap words midway through
 set foldmethod=syntax "fold (`z-a`) according to code syntax
 set nofoldenable    "disable automatic folding on file opening
 set foldlevel=99
+set mouse=a         "enable mouse
 " keybindings
 map <C-n> :NERDTreeToggle<CR>
 inoremap <C-@> <ESC> 
@@ -101,6 +102,8 @@ nmap <silent> <leader>d <Plug>(coc-definition)
 nmap <silent> <leader>g :call CocAction('doHover')<CR>
 nmap <silent> <leader>u <Plug>(coc-references)
 nmap <silent> <leader>p :call CocActionAsync('format')<CR>
+nmap <silent> <leader>D <Plug>(coc-type-definition)
+nmap <silent> <leader>y <Plug>(coc-implementation)
 nmap <silent> <leader>f :GFiles<CR>
 nmap <silent> <leader>F :Files<CR>
 nmap <silent> <leader>b :Buffers<CR>
@@ -109,15 +112,37 @@ nmap <silent> <leader>h :History<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
+" Use tab for trigger completion with characters ahead and navigate
+" NOTE: There's always complete item selected by default, you may want to enable
+" no select by `"suggest.noselect": true` in your configuration file
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
   let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+" function! s:check_back_space() abort
+  " let col = col('.') - 1
+  " return !col || getline('.')[col - 1]  =~ '\s'
+" endfunction
+
+" inoremap <silent><expr> <Tab>
+  "     \ pumvisible() ? "\<C-n>" :
+      " \ <SID>check_back_space() ? "\<Tab>" :
+      " \ coc#refresh()
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -129,3 +154,12 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+
+" NERDTress File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile("test\.*.", '249', 'NONE', 'NONE', 'NONE')
+
