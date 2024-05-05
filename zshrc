@@ -153,6 +153,10 @@ alias grmpruned="gpruned | xargs git branch --delete"
 alias rm="trash"
 alias del="trash"
 
+alias get="curl -iL"
+alias post="curl -iL -X POST"
+alias put="curl -iL -X PUT"
+
 alias ports="lsof -nP -iTCP -sTCP:LISTEN"
 alias colors="for COLOR in {1..255}; do echo -en \"\e[38;5;\${COLOR}m\${COLOR} \"; done; echo;"
 
@@ -165,4 +169,18 @@ if [ -e /Users/matthewnelson/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/
 # hook direnv to shell, used by ihp (haskell web framework)
 # eval "$(direnv hook zsh)"
 
-. ~/.zsh_local_aliases
+# Source zsh_local_aliases file
+if [ -f ~/.zsh_local_aliases ]; then
+    source ~/.zsh_local_aliases
+fi
+
+
+### Prime autocomplete
+autoload -Uz compinit
+compinit -i
+
+### enable aws cli autocomplete
+autoload bashcompinit && bashcompinit
+source /opt/homebrew/share/zsh/site-functions/aws_zsh_completer.sh
+
+[ -f "/Users/mnelson/.ghcup/env" ] && . "/Users/mnelson/.ghcup/env" # ghcup-env
