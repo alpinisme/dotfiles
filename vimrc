@@ -20,6 +20,7 @@ Plug 'fenetikm/falcon'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "Fuzzy search
 Plug 'junegunn/fzf.vim'
+Plug 'pbrisbin/vim-syntax-shakespeare' "syntax highlighting for haskell shakespeare template files
 Plug 'itchyny/lightline.vim'    "status bar at bottom
 Plug 'andys8/vim-elm-syntax'    "elm syntax highlight
 Plug 'janko/vim-test'           "testing
