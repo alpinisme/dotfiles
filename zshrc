@@ -133,6 +133,8 @@ alias dev="npm run dev"
 alias prod="npm run prod"
 alias pat="php artisan test"
 alias patp="php artisan test --parallel"
+alias curlprod='curl -H "Authorization: $(squint bearer --prod)"'
+alias curldev='curl -H "Authorization: $(squint bearer --dev)"'
 
 # General Command Line Aliases
 alias zshrc="vim $HOME/.zshrc"
@@ -184,3 +186,5 @@ autoload bashcompinit && bashcompinit
 source /opt/homebrew/share/zsh/site-functions/aws_zsh_completer.sh
 
 [ -f "/Users/mnelson/.ghcup/env" ] && . "/Users/mnelson/.ghcup/env" # ghcup-env
+source ~/.npm-completion
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
